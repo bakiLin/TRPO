@@ -1,0 +1,208 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f0b0c553be8edd4682e9180fdd13e37, type: 3}
+  m_Name: I2Languages
+  m_EditorClassIdentifier: 
+  mSource:
+    UserAgreesToHaveItOnTheScene: 0
+    UserAgreesToHaveItInsideThePluginsFolder: 0
+    GoogleLiveSyncIsUptoDate: 1
+    mTerms:
+    - Term: Condition
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0427\u0442\u043E\u0431\u044B \u043F\u0440\u043E\u0439\u0442\u0438 \u0447\u0435\u0440\u0435\u0437
+        \u044D\u0442\u0443 \u0434\u0432\u0435\u0440\u044C, \u0442\u044B \u0434\u043E\u043B\u0436\u0435\u043D
+        \u0440\u0435\u0448\u0438\u0442\u044C \u043E\u0434\u0438\u043D \u043E\u0447\u0435\u043D\u044C
+        \u0441\u043B\u043E\u0436\u043D\u044B\u0439 \u043F\u0440\u0438\u043C\u0435\u0440."
+      - To get through that door, you have to solve one very difficult example.
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Skip
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041F\u0440\u043E\u043F\u0443\u0441\u0442\u0438\u0442\u044C"
+      - Skip
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Example
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0421\u043A\u043E\u043B\u044C\u043A\u043E \u0431\u0443\u0434\u0435\u0442
+        2+2*2?"
+      - 'How much is 2+2*2? '
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Correct
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0412\u0435\u0440\u043D\u043E, \u043C\u043E\u0436\u0435\u0448\u044C \u043F\u0440\u043E\u0445\u043E\u0434\u0438\u0442\u044C!"
+      - That's right, you can go!
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Greeting
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041F\u0440\u0438\u0432\u0435\u0442! \u042F \u0445\u0438\u0442\u0440\u044B\u0439
+        \u041B\u0438\u0441."
+      - Hi! I'm Sly Fox.
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Pre Example
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0425\u0435\u0445. \u0413\u043E\u0442\u043E\u0432\u044C\u0441\u044F, \u0431\u0443\u0434\u0435\u0442
+        \u043D\u0435\u043F\u0440\u043E\u0441\u0442\u043E."
+      - Heh. Get ready, it's not gonna be easy.
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Fox
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041B\u0438\u0441"
+      - Fox
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Racoon
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0415\u043D\u043E\u0442"
+      - Racoon
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Blank Area
+      TermType: 0
+      Description: 
+      Languages:
+      - ' '
+      - ' '
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Ok
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0425\u043E\u0440\u043E\u0448\u043E."
+      - Ok.
+      Flags: 0000
+      Languages_Touch: []
+    - Term: No
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041D\u0435 \u0445\u043E\u0447\u0443."
+      - I don't want to.
+      Flags: 0000
+      Languages_Touch: []
+    - Term: ...
+      TermType: 0
+      Description: 
+      Languages:
+      - ...
+      - ...
+      Flags: 0000
+      Languages_Touch: []
+    - Term: But
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041D\u043E \u0442\u0443\u0442 \u0431\u043E\u043B\u044C\u0448\u0435 \u043D\u0435\u0447\u0435\u0433\u043E
+        \u0434\u0435\u043B\u0430\u0442\u044C..."
+      - But there's nothing else to do here...
+      Flags: 0000
+      Languages_Touch: []
+    - Term: You can go
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041B\u0430\u0434\u043D\u043E, \u043C\u043E\u0436\u0435\u0448\u044C \u0438\u0434\u0442\u0438. "
+      - 'Fine, you can go. '
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Don't wanna talk
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041D\u0435 \u043E\u0447\u0435\u043D\u044C-\u0442\u043E \u0445\u043E\u0442\u0435\u043B\u043E\u0441\u044C
+        \u0441 \u0442\u043E\u0431\u043E\u0439 \u0440\u0430\u0437\u0433\u043E\u0432\u0430\u0440\u0438\u0432\u0430\u0442\u044C."
+      - I didn't really feel like talking to you anyways.
+      Flags: 0000
+      Languages_Touch: []
+    - Term: 6
+      TermType: 0
+      Description: 
+      Languages:
+      - 6.
+      - 6.
+      Flags: 0000
+      Languages_Touch: []
+    - Term: 8
+      TermType: 0
+      Description: 
+      Languages:
+      - 8.
+      - 8.
+      Flags: 0000
+      Languages_Touch: []
+    - Term: You're idiot
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u042F \u0442\u0430\u043A \u0438 \u0437\u043D\u0430\u043B, \u0447\u0442\u043E
+        \u0442\u044B \u0438\u0434\u0438\u043E\u0442."
+      - I knew you were an idiot.
+      Flags: 0000
+      Languages_Touch: []
+    - Term: You're funny
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u042D\u0442\u043E \u0431\u044B\u043B\u043E \u0434\u043E\u0432\u043E\u043B\u044C\u043D\u043E
+        \u0441\u043C\u0435\u0448\u043D\u043E."
+      - It was pretty funny.
+      Flags: 0000
+      Languages_Touch: []
+    CaseInsensitiveTerms: 0
+    OnMissingTranslation: 1
+    mTerm_AppName: 
+    mLanguages:
+    - Name: Russian
+      Code: ru
+      Flags: 0
+    - Name: English
+      Code: en
+      Flags: 0
+    IgnoreDeviceLanguage: 0
+    _AllowUnloadingLanguages: 0
+    Google_WebServiceURL: 
+    Google_SpreadsheetKey: 
+    Google_SpreadsheetName: 
+    Google_LastUpdatedVersion: 
+    Google_Password: change_this
+    GoogleUpdateFrequency: 3
+    GoogleInEditorCheckFrequency: 2
+    GoogleUpdateSynchronization: 1
+    GoogleUpdateDelay: 0
+    Assets: []
+    Spreadsheet_LocalFileName: 
+    Spreadsheet_LocalCSVSeparator: ','
+    Spreadsheet_LocalCSVEncoding: utf-8
+    Spreadsheet_SpecializationAsRows: 1
+    Spreadsheet_SortRows: 1
