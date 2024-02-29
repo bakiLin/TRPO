@@ -3,12 +3,7 @@
 
 ![1](https://github.com/bakiLin/TRPO/assets/120983857/8df8e8dd-9bd2-45ff-976c-b6381e96261b)
 Рис. 1 - Начало диалога
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
+<br /><br /><br />
 ![2](https://github.com/bakiLin/TRPO/assets/120983857/c228444c-48fe-4535-b563-78ad7552d7a8)
 Рис. 2 - Локализация на русский
 
