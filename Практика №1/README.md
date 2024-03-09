@@ -4,7 +4,7 @@
 
 <img src="https://github.com/bakiLin/TRPO/assets/120983857/8df8e8dd-9bd2-45ff-976c-b6381e96261b" width=75% height=75%/>
 <br />
-Рис. 1 - Начало диалога
+Рис. 1 - Локализация на английский
 <br /><br /><br />
 
 <img src="https://github.com/bakiLin/TRPO/assets/120983857/c228444c-48fe-4535-b563-78ad7552d7a8" width=75% height=75%/>
@@ -12,11 +12,7 @@
 Рис. 2 - Локализация на русский
 <br /><br /><br />
 
-<img src="https://github.com/bakiLin/TRPO/assets/120983857/8feab964-1dde-430d-a1b0-e1648d784ff6" width=75% height=75%/>
+<img src="https://github.com/bakiLin/TRPO/assets/120983857/99fe00f4-d4cc-4a26-82d3-a3c5ee480ff0" width=75% height=75%/>
 <br />
-Рис. 3 - Опция выбора ответа
+Рис. 3 - Ключи 
 <br /><br /><br />
-
-<img src="https://github.com/bakiLin/TRPO/assets/120983857/c412306a-50e0-4b26-8725-ed903d52b063" width=75% height=75%/>
-<br />
-Рис. 4 - Локализация на русский
