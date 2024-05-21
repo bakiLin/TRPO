@@ -11,12 +11,13 @@ public class DialogManager : MonoBehaviour
     [Space]
 
     [Header("Gameobjects")]
+    [SerializeField] private GameObject dialogueBox;
     [SerializeField] private GameObject _skipButton;
     [SerializeField] private GameObject _optionButton1;
     [SerializeField] private GameObject _optionButton2;
     [SerializeField] private GameObject _doorClosed;
     [SerializeField] private GameObject _doorOpen;
-    [SerializeField] private GameObject _doorInteract;
+    [SerializeField] private BoxCollider2D door;
     [Space]
 
     [Header("Dialogue branches")]
@@ -33,36 +34,32 @@ public class DialogManager : MonoBehaviour
 
     private string[] _currentBranch;
 
-    private int _count = 0;
+    private int dialogueLineNumber = 0;
     private int _optionCount = 0;
 
     private void Start()
     {
         _currentBranch = _branch1;
-
-        _sentence.Term = _currentBranch[_count];
+        _sentence.Term = _currentBranch[dialogueLineNumber];
         _name.Term = "Fox";
     }
 
     public void SkipSentence()
     {
-        _count++;
+        dialogueLineNumber++;
 
-        if (_count != _currentBranch.Length)
+        if (dialogueLineNumber != _currentBranch.Length)
         {
-            _sentence.Term = _currentBranch[_count];
-
-            if (_currentBranch[_count] == "Blank Area")
-                OptionStart();
+            _sentence.Term = _currentBranch[dialogueLineNumber];
+            if (_currentBranch[dialogueLineNumber] == "Blank Area") OptionStart();
         }
         else 
         {
-            Transform dialogueBox = _skipButton.transform.parent;
-            dialogueBox.gameObject.SetActive(false);
+            dialogueBox.SetActive(false);
             _movementScript.enabled = true;
             _doorClosed.SetActive(false);
             _doorOpen.SetActive(true);
-            _doorInteract.SetActive(true);
+            door.isTrigger = true;
         }
     }
 
@@ -70,9 +67,7 @@ public class DialogManager : MonoBehaviour
     {
         _name.Term = "Racoon";
 
-        _skipButton.SetActive(false);
-        _optionButton1.SetActive(true);
-        _optionButton2.SetActive(true);
+        OptionButtonState(false);
 
         _option1.Term = _allOptions[_optionCount];
         _option2.Term = _allOptions[_optionCount + 1];
@@ -83,26 +78,25 @@ public class DialogManager : MonoBehaviour
     {
         _name.Term = "Fox";
 
-        _skipButton.SetActive(true);
-        _optionButton1.SetActive(false);
-        _optionButton2.SetActive(false);
+        OptionButtonState(true);
 
-        _count++;
-        _sentence.Term = _currentBranch[_count];
+        dialogueLineNumber++;
+        _sentence.Term = _currentBranch[dialogueLineNumber];
     }
 
-    public void Option1()
+    private void OptionButtonState(bool state)
     {
-        OptionOver();
+        _skipButton.SetActive(state);
+        _optionButton1.SetActive(!state);
+        _optionButton2.SetActive(!state);
     }
+
+    public void Option1() => OptionOver();
 
     public void Option2()
     {
-        if (_count == 2)
-            _currentBranch = _branch2;
-
-        if (_count == 5)
-            _currentBranch = _branch3;
+        if (dialogueLineNumber == 2) _currentBranch = _branch2;
+        if (dialogueLineNumber == 5) _currentBranch = _branch3;
 
         OptionOver();
     }

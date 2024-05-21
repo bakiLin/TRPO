@@ -1,65 +1,41 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField] private float _speed;
-    [SerializeField] private Animator _animator;
+    [SerializeField] private float speed;
+    [SerializeField] private Animator animator;
 
-    private Vector2 _movePos = Vector2.zero;
-    private Rigidbody2D _rb;
+    private Vector2 moveDirection;
+    private Rigidbody2D rb;
 
-    private bool _moveHor = false;
-    private bool _moveVert = false;
+    private bool isMovingHorizontaly, isMovingVerticaly;
+    private int lastMovedDirection;
 
-    private void Start()
-    {
-        _rb = GetComponent<Rigidbody2D>();
-    }
+    private void Start() => rb = GetComponent<Rigidbody2D>();
 
     private void Update()
     {
-        float hor = Input.GetAxisRaw("Horizontal");
-        float vert = Input.GetAxisRaw("Vertical");
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
 
-        _moveHor = CheckMovement(hor, _moveHor, _moveVert);
-        _moveVert = CheckMovement(vert, _moveVert, _moveHor);
+        isMovingHorizontaly = horizontal != 0 && !isMovingVerticaly;
+        isMovingVerticaly = vertical != 0 && !isMovingHorizontaly;
 
-        _movePos.x = SetMovement(_moveHor, hor, 3f, 2f);
-        _movePos.y = SetMovement(_moveVert, vert, 1f, 0f);
+        moveDirection.x = isMovingHorizontaly ? horizontal : 0f;
+        moveDirection.y = isMovingVerticaly ? vertical : 0f;
 
-        _animator.SetFloat("Speed", Mathf.Abs(_movePos.x) + Mathf.Abs(_movePos.y));
-        _animator.SetFloat("Horizontal", _movePos.x);
-        _animator.SetFloat("Vertical", _movePos.y);
-    }
-    
-    private bool CheckMovement(float dirValue, bool currDir, bool oppositeDir)
-    {
-        bool temp = false;
+        animator.SetFloat("Speed", moveDirection.magnitude);
+        animator.SetFloat("Horizontal", moveDirection.x);
+        animator.SetFloat("Vertical", moveDirection.y);
 
-        if (Mathf.Abs(dirValue) > 0 && !oppositeDir)
-            temp = true;
-        else if (Mathf.Abs(dirValue) == 0 && currDir)
-            temp = false;
+        if (isMovingHorizontaly) lastMovedDirection = horizontal > 0 ? 3 : 2;
+        if (isMovingVerticaly) lastMovedDirection = vertical > 0 ? 0 : 1;
 
-        return temp;
-    }
-
-    private float SetMovement(bool currDir, float dirValue, float num1, float num2)
-    { 
-        if (currDir)
-        {
-            if (dirValue == 1) _animator.SetFloat("Last Direction", num1);
-            else _animator.SetFloat("Last Direction", num2);
-
-            return dirValue;
-        }
-        else
-            return 0f;
+        animator.SetFloat("Last Direction", lastMovedDirection);
     }
 
     private void FixedUpdate()
     {
-        _rb.MovePosition(_rb.position + _movePos * _speed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + speed * Time.fixedDeltaTime * moveDirection);
     }
 }

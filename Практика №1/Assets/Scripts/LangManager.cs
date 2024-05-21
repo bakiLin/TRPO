@@ -4,34 +4,25 @@ using UnityEngine.UI;
 
 public class LangManager : MonoBehaviour
 {
-    [SerializeField] private Image _buttonImg;
+    [SerializeField] private Image buttonImage;
+    [SerializeField] private Sprite englishSprite;
+    [SerializeField] private Sprite russianSprite;
 
-    [SerializeField] private Sprite _englishSprite;
-    [SerializeField] private Sprite _russianSprite;
+    private bool isRussian;
 
-    private bool isRussian = false;
+    private void Start() => LocalizationManager.CurrentLanguage = "English";
 
-    private void Start()
+    public void ChangeLanguage()
     {
-        LocalizationManager.CurrentLanguage = "English";
+        if (isRussian) LanguageChoice("English", englishSprite);
+        else LanguageChoice("Russian", russianSprite);
+
+        isRussian = !isRussian;
     }
 
-    public void ChangeLang()
+    private void LanguageChoice(string language, Sprite sprite)
     {
-        if (!isRussian)
-        {
-            LocalizationManager.CurrentLanguage = "Russian";
-            _buttonImg.sprite = _russianSprite;
-
-            isRussian = true;
-        }
-        else
-        {
-            LocalizationManager.CurrentLanguage = "English";
-            _buttonImg.sprite = _englishSprite;
-
-            isRussian = false;
-        }
-            
+        LocalizationManager.CurrentLanguage = language;
+        buttonImage.sprite = sprite;
     }
 }
